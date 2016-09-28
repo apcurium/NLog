@@ -45,7 +45,7 @@ namespace NLog.Config
     /// </summary>
     public sealed class InstallationContext : IDisposable
     {
-#if !SILVERLIGHT
+#if !SILVERLIGHT && !__IOS__ && !__ANDROID__
         /// <summary>
         /// Mapping between log levels and console output colors.
         /// </summary>
