@@ -241,7 +241,7 @@ namespace NLog.Config
             var nlogAssembly = typeof(ILogger).Assembly;
             var factory = new ConfigurationItemFactory(nlogAssembly);
             factory.RegisterExtendedItems();
-#if !SILVERLIGHT
+#if !SILVERLIGHT && !__ANDROID__
 
             var assemblyLocation = Path.GetDirectoryName(new Uri(nlogAssembly.CodeBase).LocalPath);
             if (assemblyLocation == null)
